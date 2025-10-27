@@ -1,0 +1,725 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  /* Dark Gray & Lighter Gold Theme */
+  --background: #1a1a1a;
+  --foreground: #e8e6e3;
+  --card: #2a2a2a;
+  --card-foreground: #e8e6e3;
+  --popover: #2a2a2a;
+  --popover-foreground: #e8e6e3;
+  --primary: #B8860B;
+  --primary-foreground: #1a1a1a;
+  --secondary: #333333;
+  --secondary-foreground: #e8e6e3;
+  --muted: #2d2d2d;
+  --muted-foreground: #a0a0a0;
+  --accent: #8B7500;
+  --accent-foreground: #e8e6e3;
+  --destructive: #dc2626;
+  --destructive-foreground: #e8e6e3;
+  --border: rgba(184, 134, 11, 0.2);
+  --input: #333333;
+  --input-background: #2a2a2a;
+  --switch-background: #3d3d3d;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #B8860B;
+  --chart-1: #B8860B;
+  --chart-2: #8B7500;
+  --chart-3: #CD853F;
+  --chart-4: #DAA520;
+  --chart-5: #D4AF37;
+  --radius: 0;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #e8e6e3;
+  --sidebar-primary: #B8860B;
+  --sidebar-primary-foreground: #1a1a1a;
+  --sidebar-accent: #2a2a2a;
+  --sidebar-accent-foreground: #e8e6e3;
+  --sidebar-border: rgba(184, 134, 11, 0.2);
+  --sidebar-ring: #B8860B;
+}
+
+.light {
+  --background: #f8f6f3;
+  --foreground: #2d2d2d;
+  --card: #ffffff;
+  --card-foreground: #2d2d2d;
+  --popover: #ffffff;
+  --popover-foreground: #2d2d2d;
+  --primary: #8B7500;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f3f0;
+  --secondary-foreground: #2d2d2d;
+  --muted: #f0ede8;
+  --muted-foreground: #6b6b6b;
+  --accent: #B8860B;
+  --accent-foreground: #2d2d2d;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(139, 117, 0, 0.2);
+  --input: transparent;
+  --input-background: #ffffff;
+  --switch-background: #e0ddd8;
+  --ring: #8B7500;
+  --sidebar: #f8f6f3;
+  --sidebar-foreground: #2d2d2d;
+  --sidebar-primary: #8B7500;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f5f3f0;
+  --sidebar-accent-foreground: #2d2d2d;
+  --sidebar-border: rgba(139, 117, 0, 0.2);
+  --sidebar-ring: #8B7500;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cairo', 'Tajawal', 'Amiri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* RTL Support - Enhanced for Arabic */
+  html[dir="rtl"] {
+    direction: rtl;
+  }
+  
+  /* Responsive Text Alignment - Mobile Center, Desktop Right */
+  html[dir="rtl"] * {
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    html[dir="rtl"] * {
+      text-align: right;
+    }
+  }
+  
+  /* Keep certain elements centered on all screen sizes */
+  html[dir="rtl"] .text-center,
+  html[dir="rtl"] .text-center *,
+  html[dir="rtl"] button,
+  html[dir="rtl"] .gold-button,
+  html[dir="rtl"] .rtl-button {
+    text-align: center !important;
+  }
+  
+  html[dir="rtl"] .text-left {
+    text-align: left;
+  }
+  
+  html[dir="rtl"] .text-justify {
+    text-align: justify;
+  }
+  
+  /* Specific RTL utilities with responsive behavior */
+  .rtl-text-right {
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .rtl-text-right {
+      text-align: right;
+    }
+  }
+  
+  .rtl-text-center {
+    text-align: center;
+  }
+  
+  .rtl-text-left {
+    text-align: left;
+  }
+  
+  /* RTL Flex and Grid utilities */
+  
+  
+  html[dir="rtl"] .flex-col {
+    flex-direction: column;
+  }
+  
+  html[dir="rtl"] .items-center {
+    align-items: center;
+  }
+  
+  html[dir="rtl"] .justify-center {
+    justify-content: center;
+  }
+  
+  html[dir="rtl"] .justify-between {
+    justify-content: space-between;
+  }
+  
+  html[dir="rtl"] .justify-end {
+    justify-content: flex-start;
+  }
+  
+  html[dir="rtl"] .justify-start {
+    justify-content: flex-end;
+  }
+  
+  /* RTL margin and padding overrides */
+  html[dir="rtl"] .mr-2 {
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+  
+  html[dir="rtl"] .ml-2 {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+  
+  html[dir="rtl"] .mr-3 {
+    margin-right: 0;
+    margin-left: 0.75rem;
+  }
+  
+  html[dir="rtl"] .ml-3 {
+    margin-left: 0;
+    margin-right: 0.75rem;
+  }
+  
+  html[dir="rtl"] .pr-3 {
+    padding-right: 0;
+    padding-left: 0.75rem;
+  }
+  
+  html[dir="rtl"] .pl-3 {
+    padding-left: 0;
+    padding-right: 0.75rem;
+  }
+  
+  html[dir="rtl"] .pr-10 {
+    padding-right: 0;
+    padding-left: 2.5rem;
+  }
+  
+  html[dir="rtl"] .pl-10 {
+    padding-left: 0;
+    padding-right: 2.5rem;
+  }
+}
+
+/**
+ * Base typography with Arabic font support and responsive RTL alignment
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    /* Mobile: Center alignment, Desktop: Right alignment */
+    h1, h2, h3, h4, h5, h6 {
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      h1, h2, h3, h4, h5, h6 {
+        text-align: right;
+      }
+    }
+
+    p {
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    @media (min-width: 768px) {
+      p {
+        text-align: right;
+      }
+    }
+
+    label {
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      label {
+        text-align: right;
+      }
+    }
+
+    button {
+      text-align: center;
+    }
+
+    input, textarea {
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      input, textarea {
+        text-align: right;
+      }
+    }
+    
+    /* Center aligned elements stay center on all screens */
+    .text-center,
+    .text-center * {
+      text-align: center !important;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  direction: rtl;
+}
+
+/* Custom scrollbar utilities */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom smooth scrollbar */
+.scrollbar-smooth {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(184, 134, 11, 0.3) transparent;
+}
+
+.scrollbar-smooth::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-smooth::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-smooth::-webkit-scrollbar-thumb {
+  background: rgba(184, 134, 11, 0.3);
+  border-radius: 0;
+}
+
+.scrollbar-smooth::-webkit-scrollbar-thumb:hover {
+  background: rgba(184, 134, 11, 0.5);
+}
+
+/* Lighter Gold gradients */
+.gold-gradient {
+  background: linear-gradient(135deg, #B8860B 0%, #CD853F 100%);
+}
+
+.light-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark theme professional card styling */
+.professional-card {
+  background: rgba(42, 42, 42, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.professional-card:hover {
+  background: rgba(45, 45, 45, 0.98);
+  border-color: rgba(184, 134, 11, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Dark glass card variant */
+.dark-glass-card {
+  background: rgba(26, 26, 26, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 134, 11, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.dark-glass-card:hover {
+  background: rgba(30, 30, 30, 0.9);
+  border-color: rgba(184, 134, 11, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Enhanced button styling for lighter gold */
+.gold-button {
+  background: linear-gradient(135deg, #B8860B 0%, #CD853F 100%);
+  color: #1a1a1a;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.gold-button:hover {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Dark theme navigation styling */
+.dark-nav {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(184, 134, 11, 0.15);
+}
+
+/* Footer specific styling */
+.footer-dark {
+  background: linear-gradient(135deg, #1a1a1a 0%, #1f1f1f 100%);
+  border-top: 1px solid rgba(184, 134, 11, 0.1);
+}
+
+.footer-text {
+  color: #a0a0a0;
+}
+
+.footer-link {
+  color: #B8860B;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #D4AF37;
+}
+
+/* Responsive grid utilities */
+@media (max-width: 768px) {
+  .mobile-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .mobile-padding {
+    padding: 1rem;
+  }
+  
+  .mobile-text {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-sm-padding {
+    padding: 0.75rem;
+  }
+  
+  .mobile-sm-text {
+    font-size: 0.8rem;
+  }
+}
+
+/* Enhanced text contrast for dark theme */
+.text-contrast {
+  color: #e8e6e3;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.text-gold-contrast {
+  color: #B8860B;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Simple gallery styling */
+.gallery-container {
+  background: rgba(26, 26, 26, 0.9);
+  backdrop-filter: blur(16px);
+}
+
+.gallery-image {
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.02);
+}
+
+/* RTL specific component styling with responsive alignment */
+.rtl-card {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .rtl-card {
+    text-align: right;
+  }
+}
+
+.rtl-card .text-center {
+  text-align: center;
+}
+
+.rtl-button {
+  text-align: center;
+}
+
+/* RTL input styling with responsive alignment */
+html[dir="rtl"] input {
+  text-align: center;
+  padding-right: 0.75rem;
+  padding-left: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  html[dir="rtl"] input {
+    text-align: right;
+  }
+}
+
+html[dir="rtl"] textarea {
+  text-align: center;
+  padding-right: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  html[dir="rtl"] textarea {
+    text-align: right;
+  }
+}
+
+/* RTL Icon positioning */
+html[dir="rtl"] .absolute.right-3 {
+  right: auto;
+  left: 0.75rem;
+}
+
+html[dir="rtl"] .absolute.left-3 {
+  left: auto;
+  right: 0.75rem;
+}
+
+/* Responsive text alignment utilities */
+.mobile-center-desktop-right {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .mobile-center-desktop-right {
+    text-align: right;
+  }
+}
+
+/* Specific responsive alignment for features and content */
+.feature-text {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .feature-text {
+    text-align: right;
+  }
+}
+
+/* Card content responsive alignment */
+.card-content-text {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .card-content-text {
+    text-align: right;
+  }
+}
+
+/* Project Detail Sticky Layout */
+.project-detail-image-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (max-width: 1023px) {
+  .project-detail-image-sticky {
+    position: relative;
+    height: 40vh;
+  }
+}
+
+/* Project Detail Content Scrolling */
+.project-detail-content {
+  min-height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.project-detail-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.project-detail-content::-webkit-scrollbar-track {
+  background: rgba(45, 45, 45, 0.3);
+  border-radius: 0;
+}
+
+.project-detail-content::-webkit-scrollbar-thumb {
+  background: rgba(184, 134, 11, 0.4);
+  border-radius: 0;
+}
+
+.project-detail-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(184, 134, 11, 0.6);
+}
+
+/* Project Detail Overlay */
+.project-detail-overlay {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Project Detail Animation */
+.project-detail-enter {
+  animation: projectDetailSlideIn 0.3s ease-out;
+}
+
+@keyframes projectDetailSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Smooth scrolling for the entire page */
+.project-detail-page {
+  scroll-behavior: smooth;
+}
+
+/* Image gallery with improved controls */
+.project-image-gallery {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image-controls {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-image-gallery:hover .project-image-controls {
+  opacity: 1;
+}
+
+/* Thumbnail strip improvement */
+.project-thumbnails {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  padding: 8px;
+}
+
+/* Content section spacing */
+.project-content-section {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .project-content-section {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Responsive image positioning */
+@media (min-width: 1024px) {
+  .project-desktop-left-image {
+    order: -1;
+  }
+  
+  .project-desktop-right-content {
+    order: 1;
+  }
+}
+
+/* Project Detail Layout - Force Left/Right positioning in RTL */
+.project-detail-layout {
+  direction: ltr !important;
+}
+
+.project-image-left {
+  order: 1;
+}
+
+.project-content-right {
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  /* Force image to stay on the left */
+  .project-image-left {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: 51;
+  }
+  
+  /* Force content to the right */
+  .project-content-right {
+    margin-left: 50%;
+    width: 50%;
+    position: relative;
+    z-index: 52;
+  }
+}
+
+/* RTL text direction for content only */
+.project-content-right {
+  direction: rtl;
+}
+
+.project-content-right * {
+  direction: rtl;
+}
