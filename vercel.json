@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "https://arch-panel.vercel.app/admin" 
+    },
+    {
+      "source": "/admin/:match*",
+      "destination": "https://arch-panel.vercel.app/admin/:match*"
+    },
+    {
+      "source": "/:match*",
+      "destination": "/:match*"
+    }
+  ]
+}
