@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Button } from './ui/button';
-import { Badge } from './ui/badge';
 import { AspectRatio } from './ui/aspect-ratio';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ArrowLeft, ArrowRight, Eye } from 'lucide-react';
@@ -64,14 +63,6 @@ export function Portfolio({ onProjectClick }: PortfolioProps) {
                     
                     {/* Project info */}
                     <div className="absolute bottom-8 left-8 right-8 text-white">
-                      <div className="flex items-center gap-3 mb-4">
-                        <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30">
-                          {project.category}
-                        </Badge>
-                        <Badge variant="outline" className="border-white/30 text-white/80">
-                          {project.year}
-                        </Badge>
-                      </div>
                       
                       <h3 className="text-2xl md:text-4xl mb-4">{project.title}</h3>
                       <p className="text-white/90 mb-6 text-lg max-w-2xl leading-relaxed">

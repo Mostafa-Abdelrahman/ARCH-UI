@@ -6,15 +6,15 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const {  navLogo } = useContent();
   
-    const navLogoIcon = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'ICON') : (navLogo?.type === 'ICON' ? navLogo : null);
+    const navLogoIcon = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'LOGO') : (navLogo?.type === 'LOGO' ? navLogo : null);
 
 
 
   const fallbackNavItems = [
-    { id: '1', label: 'الرئيسية', href: '#home', order: 1, isActive: true },
-    { id: '2', label: 'الخدمات', href: '#services', order: 2, isActive: true },
-    { id: '3', label: 'أعمالنا', href: '#portfolio', order: 3, isActive: true },
-    { id: '4', label: 'تواصل معنا', href: '#contact', order: 4, isActive: true },
+    { id: '1', label: 'الرئيسية', href: 'https://www.khaterarchitect.com/#home', order: 1, isActive: true },
+    { id: '2', label: 'الخدمات', href: 'https://www.khaterarchitect.com/#services', order: 2, isActive: true },
+    { id: '3', label: 'أعمالنا', href: 'https://www.khaterarchitect.com/#portfolio', order: 3, isActive: true },
+    { id: '4', label: 'تواصل معنا', href: 'https://www.khaterarchitect.com/#contact', order: 4, isActive: true },
   ];
 
   const navItems = fallbackNavItems;

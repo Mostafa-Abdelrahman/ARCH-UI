@@ -117,9 +117,15 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
 
             {/* Contact CTA */}
             <div className="text-center pt-6">
-              <Button className="gold-button gap-2 w-full sm:w-auto">
-                <span>تواصل معنا</span>
-                <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
+              <Button 
+              className="gold-button gap-2 w-full sm:w-auto"
+              onClick={() => {
+                onClose();
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              >
+              <span>تواصل معنا</span>
+              <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
               </Button>
             </div>
 
@@ -218,14 +224,19 @@ export function ProjectDetail({ project, onClose }: ProjectDetailProps) {
                   dangerouslySetInnerHTML={{ __html: project.fullDescription }}
                 />
               </div>
-
-              {/* Contact CTA */}
-              <div className="text-center pt-6">
-                <Button className="gold-button gap-2 w-full sm:w-auto">
+                {/* Contact CTA */}
+                <div className="text-center pt-6">
+                <Button 
+                  className="gold-button gap-2 w-full sm:w-auto"
+                  onClick={() => {
+                  onClose();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   <span>تواصل معنا</span>
                   <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
                 </Button>
-              </div>
+                </div>
 
               {/* Extra spacing at bottom for smooth scrolling */}
               <div className="h-8"></div>

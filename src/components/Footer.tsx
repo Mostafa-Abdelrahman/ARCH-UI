@@ -27,7 +27,6 @@ const content = useContent();
       { name: 'خدماتنا', href: '#services' },
       { name: 'أعمالنا', href: '#portfolio' },
       { name: 'تواصل معنا', href: '#contact' },
-      { name: 'المدونة', href: '#blog' }
     ];
 
   const socialLinks = content.socialLinks.length > 0 ? content.socialLinks : [];
@@ -156,10 +155,10 @@ const content = useContent();
             </div>
             
             <div className="flex items-center gap-6 text-sm">
-              <a href="#" className="footer-link hover:text-primary transition-colors">
+              <a href="/privacy" className="footer-link hover:text-primary transition-colors">
                 الخصوصية
               </a>
-              <a href="#" className="footer-link hover:text-primary transition-colors">
+              <a href="/terms" className="footer-link hover:text-primary transition-colors">
                 الشروط والأحكام
               </a>
             </div>

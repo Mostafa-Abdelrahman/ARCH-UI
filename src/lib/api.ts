@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  baseURL: 'https://arch-server-production-3f1e.up.railway.app/api',
+  baseURL: 'https://api.khaterarchitect.com/api', // Update with your backend API URL
   headers: {
     'Content-Type': 'application/json',
   },
