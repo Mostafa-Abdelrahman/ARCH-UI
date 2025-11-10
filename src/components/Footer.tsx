@@ -22,11 +22,11 @@ const content = useContent();
   // Use API data or fallback
   const services = content.services?.map(service => service.title) ;
   const quickLinks =  [
-      { name: 'الرئيسية', href: '#home' },
-      { name: 'من نحن', href: '#about' },
-      { name: 'خدماتنا', href: '#services' },
-      { name: 'أعمالنا', href: '#portfolio' },
-      { name: 'تواصل معنا', href: '#contact' },
+      { name: 'الرئيسية', href: 'https://www.khaterarchitect.com/#home' },
+      { name: 'من نحن', href: 'https://www.khaterarchitect.com/#about' },
+      { name: 'خدماتنا', href: 'https://www.khaterarchitect.com/#services' },
+      { name: 'أعمالنا', href: 'https://www.khaterarchitect.com/#portfolio' },
+      { name: 'تواصل معنا', href: 'https://www.khaterarchitect.com/#contact' },
     ];
 
   const socialLinks = content.socialLinks.length > 0 ? content.socialLinks : [];
@@ -89,7 +89,7 @@ const content = useContent();
               <ul className="space-y-3">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <a href="#services" className="footer-text hover:text-primary transition-colors text-sm block">
+                    <a href="https://www.khaterarchitect.com/#services" className="footer-text hover:text-primary transition-colors text-sm block">
                       {service}
                     </a>
                   </li>
