@@ -6,7 +6,7 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const {  navLogo } = useContent();
   
-    const navLogoIcon = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'LOGO') : (navLogo?.type === 'LOGO' ? navLogo : null);
+    const navLogoIcon = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'ICON') : (navLogo?.type === 'LOGO' ? navLogo : null);
 
 
 

@@ -15,7 +15,7 @@ const content = useContent();
   };
       const {  navLogo } = content;
       const  Icon = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'ICON') : (navLogo?.type === 'ICON' ? navLogo : null);
-      const logo = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'LOGO') : (navLogo?.type === 'LOGO' ? navLogo : null);
+      const logo = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'ICON') : (navLogo?.type === 'LOGO' ? navLogo : null);
 
 
   const contactInfo = content.contactInfo ;
