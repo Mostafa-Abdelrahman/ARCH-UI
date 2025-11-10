@@ -121,7 +121,14 @@ function ServiceExamplesModal({ isOpen, onClose, service, onProjectClick }: Serv
                 <p className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-md mx-auto px-4">
                   سيتم إضافة أمثلة لهذه الخدمة قريباً. تواصل معنا لمعرفة المزيد عن خدماتنا.
                 </p>
-                <Button className="gold-button gap-2 mt-4 sm:mt-6">
+                <Button 
+                  className="gold-button gap-2 mt-4 sm:mt-6"
+                  onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  contactSection?.scrollIntoView({ behavior: 'smooth' });
+                  onClose();
+                  }}
+                >
                   <span className="text-sm sm:text-base">تواصل معنا</span>
                   <ArrowLeft className="w-3 h-3 sm:w-4 sm:h-4 rtl:rotate-180" />
                 </Button>

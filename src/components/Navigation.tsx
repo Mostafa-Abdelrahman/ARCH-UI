@@ -6,15 +6,15 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const {  navLogo } = useContent();
   
-    const navLogoIcon = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'ICON') : (navLogo?.type === 'LOGO' ? navLogo : null);
+    const navLogoIcon = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'LOGO') : (navLogo?.type === 'LOGO' ? navLogo : null);
 
 
 
   const fallbackNavItems = [
-    { id: '1', label: 'الرئيسية', href: 'https://www.khaterarchitect.com/#home', order: 1, isActive: true },
-    { id: '2', label: 'الخدمات', href: 'https://www.khaterarchitect.com/#services', order: 2, isActive: true },
-    { id: '3', label: 'أعمالنا', href: 'https://www.khaterarchitect.com/#portfolio', order: 3, isActive: true },
-    { id: '4', label: 'تواصل معنا', href: 'https://www.khaterarchitect.com/#contact', order: 4, isActive: true },
+    { id: '1', label: 'الرئيسية', href: 'https://khaterarchitect.com/#home', order: 1, isActive: true },
+    { id: '2', label: 'الخدمات', href: 'https://khaterarchitect.com/#services', order: 2, isActive: true },
+    { id: '3', label: 'أعمالنا', href: 'https://khaterarchitect.com/#portfolio', order: 3, isActive: true },
+    { id: '4', label: 'تواصل معنا', href: 'https://khaterarchitect.com/#contact', order: 4, isActive: true },
   ];
 
   const navItems = fallbackNavItems;
@@ -23,15 +23,15 @@ export function Navigation() {
     <nav className="fixed top-0 w-full z-50 dark-nav transition-all duration-300">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-18">
-          {/* Logo */}
+            {/* Logo */}
             <div className="flex items-center">
-            <div className="text-right rtl:text-left">
+            <a href="https://khaterarchitect.com/#home" className="text-right rtl:text-left">
               <img 
               src={navLogoIcon?.logoUrl} 
               alt={navLogoIcon?.altText}
               className="h-12 w-auto object-contain"
               />
-            </div>
+            </a>
             </div>
 
           {/* Desktop Navigation */}

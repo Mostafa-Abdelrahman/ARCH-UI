@@ -15,18 +15,18 @@ const content = useContent();
   };
       const {  navLogo } = content;
       const  Icon = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'ICON') : (navLogo?.type === 'ICON' ? navLogo : null);
-      const logo = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'ICON') : (navLogo?.type === 'LOGO' ? navLogo : null);
+      const logo = Array.isArray(navLogo) ? navLogo.find(logo => logo.type === 'LOGO') : (navLogo?.type === 'LOGO' ? navLogo : null);
 
 
   const contactInfo = content.contactInfo ;
   // Use API data or fallback
   const services = content.services?.map(service => service.title) ;
   const quickLinks =  [
-      { name: 'الرئيسية', href: 'https://www.khaterarchitect.com/#home' },
-      { name: 'من نحن', href: 'https://www.khaterarchitect.com/#about' },
-      { name: 'خدماتنا', href: 'https://www.khaterarchitect.com/#services' },
-      { name: 'أعمالنا', href: 'https://www.khaterarchitect.com/#portfolio' },
-      { name: 'تواصل معنا', href: 'https://www.khaterarchitect.com/#contact' },
+      { name: 'الرئيسية', href: 'https://khaterarchitect.com/#home' },
+      { name: 'من نحن', href: 'https://khaterarchitect.com/#about' },
+      { name: 'خدماتنا', href: 'https://khaterarchitect.com/#services' },
+      { name: 'أعمالنا', href: 'https://khaterarchitect.com/#portfolio' },
+      { name: 'تواصل معنا', href: 'https://khaterarchitect.com/#contact' },
     ];
 
   const socialLinks = content.socialLinks.length > 0 ? content.socialLinks : [];
@@ -70,15 +70,15 @@ const content = useContent();
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                  <a href="tel:+966114567890" className="footer-link text-sm hover:text-primary transition-colors">
+                    <a href={`tel:${contactInfo.find(info => info.type === 'phone')?.value}`} className="footer-link text-sm hover:text-primary transition-colors">
                     {contactInfo.find(info => info.type === 'phone')?.value }
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                  <a href="mailto:info@abdullah-studio.com" className="footer-link text-sm hover:text-primary transition-colors">
+                    <a href={`mailto:${contactInfo.find(info => info.type === 'email')?.value}`} className="footer-link text-sm hover:text-primary transition-colors">
                     {contactInfo.find(info => info.type === 'email')?.value}
-                  </a>
+                    </a>
                 </div>
               </div>
             </div>
