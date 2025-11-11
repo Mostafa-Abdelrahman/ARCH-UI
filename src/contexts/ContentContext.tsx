@@ -77,10 +77,12 @@ interface socialLink {
   icon: string;
 }
 
-interface FooterContent {
+interface SettingsContent {
   id?: string;
   companyName?: string;
   description?: string;
+  policayText?: string;
+  termsText?: string;
   copyrightText?: string;
   isActive?: boolean;
 }
@@ -93,7 +95,7 @@ interface ContentContextType {
   projects: Project[];
   contactInfo: ContactInfo[];
   socialLinks: socialLink[];
-  footerContent: FooterContent | null;
+  settingsContent: SettingsContent | null;
   loading: boolean;
   error: string | null;
   refreshContent: () => Promise<void>;
@@ -118,7 +120,7 @@ export const ContentProvider: React.FC<ContentProviderProps> = ({ children }) =>
   const [projects, setProjects] = useState<Project[]>([]);
   const [contactInfo, setContactInfo] = useState<ContactInfo[]>([]);
   const [socialLinks, setSocialLinks] = useState<socialLink[]>([]);
-  const [footerContent, setFooterContent] = useState<FooterContent | null>(null);
+  const [settingsContent, setSettingsContent] = useState<SettingsContent | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -134,7 +136,7 @@ export const ContentProvider: React.FC<ContentProviderProps> = ({ children }) =>
         projectsRes,
         contactRes,
         socialRes,
-        footerRes
+        settingsRes
       ] = await Promise.all([
         api.get('/logo'),
         api.get('/content/hero'),
@@ -142,7 +144,7 @@ export const ContentProvider: React.FC<ContentProviderProps> = ({ children }) =>
         api.get('/projects'),
         api.get('/content/contact-info'),
         api.get('/content/social-links'),
-        api.get('/content/footer')
+        api.get('/content/settings')
       ]);
 
       setLogo(logoRes.data.data);
@@ -151,7 +153,7 @@ export const ContentProvider: React.FC<ContentProviderProps> = ({ children }) =>
       setProjects(projectsRes.data.data);
       setContactInfo(contactRes.data.data);
       setSocialLinks(socialRes.data.data);
-      setFooterContent(footerRes.data.data);
+      setSettingsContent(settingsRes.data.data);
     } catch (err) {
       console.error('Failed to fetch content:', err);
       setError('فشل في تحميل المحتوى');
@@ -176,7 +178,7 @@ export const ContentProvider: React.FC<ContentProviderProps> = ({ children }) =>
     projects: projects,
     contactInfo: contactInfo,
     socialLinks: socialLinks,
-    footerContent: footerContent,
+    settingsContent: settingsContent,
     loading,
     error,
     refreshContent

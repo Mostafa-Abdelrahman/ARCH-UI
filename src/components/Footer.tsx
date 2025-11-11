@@ -32,10 +32,10 @@ const content = useContent();
   const socialLinks = content.socialLinks.length > 0 ? content.socialLinks : [];
 
   // Use footer content from API or fallback
-  const footerContent = content.footerContent;
-  const companyName = footerContent?.companyName || 'AP Architecture';
-  const companyDescription = footerContent?.description || 'نحن استوديو معماري رائد في مصر، نختص في تقديم حلول معمارية مبتكرة ومستدامة تجمع بين الأصالة والحداثة.';
-  const copyrightText = footerContent?.copyrightText || '© 2024 AP Architecture. جميع الحقوق محفوظة.';
+  const settingsContent = content.settingsContent;
+  const companyName = settingsContent?.companyName || 'Khater Architect ';
+  const companyDescription = settingsContent?.description || 'نحن استوديو معماري رائد في مصر، نختص في تقديم حلول معمارية مبتكرة ومستدامة تجمع بين الأصالة والحداثة.';
+  const copyrightText = settingsContent?.copyrightText || '© 2025 Khater Architect . جميع الحقوق محفوظة.';
 
   return (
     <footer className="footer-dark">
